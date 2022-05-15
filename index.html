@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+       Piedra Papel o Tijera 
+    </title>
+</head>
+
+<body>
+</body>
+
+
+<script>
+
+let puntAjejugador = 0;
+let puntAjemaquina = 0;
+
+for (var i = 0; i < 3; i++){
+
+    let juGada = entrada();
+    let maQuina= devuelve();
+    
+
+
+
+    switch (juGada){
+        case "piedra":
+            switch (maQuina){
+                case "piedra":
+                document.write("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Empate <br>")
+                break
+                case "papel":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Perdiste <br>")
+                puntAjemaquina++
+                break
+                case "tijera":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Ganaste <br>")
+                puntAjejugador++
+                break
+            } 
+    break
+        case "papel":
+            switch (maQuina){
+                case "piedra":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Ganaste <br>")
+                puntAjejugador++
+                break
+                case "papel":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Empate <br>")
+                break
+                case "tijera":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Perdiste <br>")
+                puntAjemaquina++
+                break    
+            }
+    break
+        case "tijera":
+            switch (maQuina){
+                case "piedra":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Perdiste <br>")
+                puntAjemaquina++
+                break
+                case "papel":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Ganaste <br>")
+                puntAjejugador++
+                break
+                case "tijera":
+                document.write ("Jugador: "+juGada+" Computadora: "+maQuina+" =>> Empate <br>")
+                break
+            }
+    break
+    }              
+}
+
+document.write("<br><br>--------------PARTIDA TERMINADA---------------<br>")
+
+if (puntAjejugador>puntAjemaquina){document.write("GANASTE")}
+else{ 
+    if (puntAjejugador<puntAjemaquina){document.write("PERDISTE <br>")} else document.write("EMPATE")}
+
+
+
+
+        function devuelve(){
+            let aux = Math.random();
+                        let valor;
+            if  (aux < 0.33) {valor = "piedra"}
+            else if
+                (aux<0.66){valor = "papel"}
+            else {valor = "tijera"}
+        return valor    
+        }
+            
+            
+        function entrada(){
+        let aux = prompt("Ingrese piedra, papel o tijera")
+        do{
+           if (aux != "piedra" && aux != "papel" && aux != "tijera"){
+                aux = prompt("Opcion incorrecta, por favor ingrese piedra, papel o tijera")
+            }
+        }
+            while  (aux != "piedra" && aux != "papel" && aux != "tijera") 
+        return aux  
+        }
+
+    
+
+
+</script>
+
+
+
+</html>
+
+
+
